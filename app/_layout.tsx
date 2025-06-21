@@ -23,7 +23,9 @@ export default function RootLayout() {
 			<View style={styles.container}>
 				<View style={styles.header}>
 					<Menu pages={pages} setOpen={setMenuOpen} isOpen={isMenuOpen} />
-				</View>
+                    <View style={styles.spacer} />
+					<View style={styles.title}><Text>θCalc</Text></View>
+                </View>
 				
 				<Stack>
 					{pages.map((page) => <Stack.Screen options={{ headerShown: false }} name={page.stack} key={page.stack} />)}
@@ -39,11 +41,17 @@ const styles = StyleSheet.create({
 		padding: 0,
 	},
 	header : {
+        flexDirection: 'row',
 		paddingLeft: 10,
 		paddingRight: 10,
 	},
-	text: {
-		textAlign: "center",
-		fontSize: 24
-	}
+    spacer: {
+        flex: 1,
+    },
+    title: {
+        fontSize: '24',
+        position: 'absolute',
+        left: '50%',
+        transform: [{translateX: '-50%'}],
+    }
 });
