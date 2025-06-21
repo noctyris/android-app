@@ -29,7 +29,7 @@ export default function Menu(props) {
 						href={page.href}
 						style={styles.link}
 					>
-						• {page.name}
+						- {page.name}
 					</Link>
 				))}
 			</Animated.View>
