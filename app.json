@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "θCalc",
-    "slug": "θCalc",
+    "slug": "android-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -44,6 +44,7 @@
       "eas": {
         "projectId": "da6f0081-4ca4-4c38-96ce-a2ebed7fe307"
       }
-    }
+    },
+    "owner": "noctyris"
   }
 }
