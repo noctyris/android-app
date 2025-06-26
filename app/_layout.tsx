@@ -16,19 +16,21 @@ export default function RootLayout() {
 	const pages: Page[] = [
 		{ href: "/", name: "Main", stack: "index" },
 		{ href: "/details", name: "Details", stack: "details" },
+		{ href: "/details", name: "Details2", stack: "details2" },
 	];
 
 	return (
-		<SafeAreaView style={{flex: 1}} edges={['top', 'bottom', 'left', 'right']}>
+		<SafeAreaView style={{flex: 1}} edges={['top', 'bottom']}>
 			<View style={styles.container}>
 				<View style={styles.header}>
 					<Menu pages={pages} setOpen={setMenuOpen} isOpen={isMenuOpen} />
                     <View style={styles.spacer} />
-					<View style={styles.title}><Text>θCalc</Text></View>
+					<View style={styles.title}><Text style={{fontSize: 24}}>θCalc</Text></View>
                 </View>
 				
-				<Stack>
-					{pages.map((page) => <Stack.Screen options={{ headerShown: false }} name={page.stack} key={page.stack} />)}
+				<Stack screenOptions={{ headerShown: false }}>
+					<Stack.Screen name="index" />
+					<Stack.Screen name="(pages)" />
 				</Stack>
 			</View>
 		</SafeAreaView>
@@ -42,16 +44,16 @@ const styles = StyleSheet.create({
 	},
 	header : {
         flexDirection: 'row',
-		paddingLeft: 10,
-		paddingRight: 10,
+		paddingHorizontal: 10,
+        alignItems: 'center',
+        paddingVertical: 20,
 	},
     spacer: {
         flex: 1,
     },
     title: {
-        fontSize: '24',
         position: 'absolute',
         left: '50%',
-        transform: [{translateX: '-50%'}],
+        transform: [{translateX: '-40%'}],
     }
 });
